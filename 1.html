@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 1</title>
+    <script>
+        function checkUserData() {
+            let lastName = prompt("Введіть прізвище:", "");
+            let firstName = prompt("Введіть ім'я:", "");
+            let middleName = prompt("Введіть по-батькові:", "");
+
+            if (lastName && firstName && middleName) {
+                let confirmData = confirm(`Перевірте правильність даних:\n${lastName} ${firstName} ${middleName}\nПідтверджуєте?`);
+                if (confirmData) {
+                    alert(`Вітаю, ${lastName} ${firstName} ${middleName}! Дані успішно збережено.`);
+                } else {
+                    alert("Помилка: Реєстрацію скасовано користувачем.");
+                }
+            } else {
+                alert("Помилка: Необхідно заповнити всі поля форми.");
+            }
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+    <h2>Завдання 1 (Функція)</h2>
+    <a href="index.html">🔙 Повернутися до списку завдань</a><br><br>
+    
+    <button onclick="checkUserData()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Запустити ідентифікацію</button>
+</body>
+</html>
