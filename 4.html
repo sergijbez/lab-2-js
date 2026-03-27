@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 4</title>
+    <script>
+        let clickCount = 0; 
+        
+        function generateRow() {
+            clickCount++;
+            document.getElementById("displayArea").innerHTML += "<p>Запис №" + clickCount + "</p>";
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+    <h2>Завдання 4 (Динамічний генератор)</h2>
+    <a href="index.html">🔙 Повернутися до списку завдань</a><br><br>
+    
+    <button onclick="generateRow()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Згенерувати рядок</button>
+    
+    <div id="displayArea" style="margin-top: 25px; font-size: 18px; color: #2c3e50;"></div>
+</body>
+</html>
