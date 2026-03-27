@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 3</title>
+    <script>
+        function computeTime() {
+            let hoursInput = prompt("Вкажіть поточну годину (формат 0-23):", "");
+            let minsInput = prompt("Вкажіть поточні хвилини (формат 0-59):", "");
+
+            let hours = parseInt(hoursInput);
+            let mins = parseInt(minsInput);
+
+            if (isNaN(hours) || isNaN(mins) || hours < 0 || hours > 23 || mins < 0 || mins > 59) {
+                alert("Помилка валідації: Значення часу виходять за допустимі межі.");
+            } else {
+                mins++;
+                if (mins === 60) {
+                    mins = 0;
+                    hours++;
+                    if (hours === 24) {
+                        hours = 0;
+                    }
+                }
+                
+                let displayHours = hours < 10 ? "0" + hours : hours;
+                let displayMins = mins < 10 ? "0" + mins : mins;
+
+                alert(`Розрахунковий час (через 1 хвилину): ${displayHours}:${displayMins}`);
+            }
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+    <h2>Завдання 3 (Обчислення часу через функцію)</h2>
+    <a href="index.html">🔙 Повернутися до списку завдань</a><br><br>
+    
+    <button onclick="computeTime()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Розрахувати час</button>
+</body>
+</html>
