@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Завдання 2</title>
+    <script>
+        function runCalculator() {
+            let val1 = prompt("Введіть перше числове значення:", "");
+            let val2 = prompt("Введіть друге числове значення:", "");
+            let operation = prompt("Оберіть математичну операцію (+, -, *, /):", "");
+
+            let num1 = parseFloat(val1);
+            let num2 = parseFloat(val2);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Системна помилка: Введено некоректний формат чисел.");
+            } else {
+                let res;
+                let hasError = false;
+
+                if (operation === '+') { res = num1 + num2; }
+                else if (operation === '-') { res = num1 - num2; }
+                else if (operation === '*') { res = num1 * num2; }
+                else if (operation === '/') {
+                    if (num2 === 0) {
+                        alert("Математична помилка: Ділення на нуль заборонено.");
+                        hasError = true;
+                    } else {
+                        res = num1 / num2;
+                    }
+                } else {
+                    alert("Помилка: Оператор не розпізнано.");
+                    hasError = true;
+                }
+
+                if (!hasError) {
+                    alert(`Результат обчислення: ${num1} ${operation} ${num2} = ${res}`);
+                }
+            }
+        }
+    </script>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+    <h2>Завдання 2 (Функція калькулятора)</h2>
+    <a href="index.html">🔙 Повернутися до списку завдань</a><br><br>
+    
+    <button onclick="runCalculator()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Відкрити калькулятор</button>
+</body>
+</html>
